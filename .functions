@@ -1,0 +1,43 @@
+# Create a new directory and enter it
+function mk() {
+  mkdir -p "$@" && cd "$@"
+}
+
+# Extra many types of compressed packages
+# Credit: http://nparikh.org/notes/zshrc.txt
+extract() {
+  if [ -f "$1" ]; then
+    case "$1" in
+      *.tar.bz2)  tar -jxvf "$1"                        ;;
+      *.tar.gz)   tar -zxvf "$1"                        ;;
+      *.bz2)      bunzip2 "$1"                          ;;
+      *.dmg)      hdiutil mount "$1"                    ;;
+      *.gz)       gunzip "$1"                           ;;
+      *.tar)      tar -xvf "$1"                         ;;
+      *.tbz2)     tar -jxvf "$1"                        ;;
+      *.tgz)      tar -zxvf "$1"                        ;;
+      *.zip)      unzip "$1"                            ;;
+      *.ZIP)      unzip "$1"                            ;;
+      *.pax)      cat "$1" | pax -r                     ;;
+      *.pax.Z)    uncompress "$1" --stdout | pax -r     ;;
+      *.Z)        uncompress "$1"                       ;;
+      *) echo "'$1' cannot be extracted/mounted via extract()" ;;
+    esac
+  else
+     echo "'$1' is not a valid file to extract"
+  fi
+}
+
+# This calculates due dates for vulnerabilities
+# Usage 'dueDate 02/20/2015 90
+
+function dueDate() {
+     if [ -z "$1" -o -z "$2" ]; then
+        echo "Usage: $0 mm/dd/yyyy 30/60/90";
+    else
+        date=$1 #mm/dd/yyyy
+        delta=$2
+        python -c "import datetime; print (datetime.timedelta(days=$delta) + datetime.datetime.strptime('$date', '%m/%d/%Y')).strftime('%m/%d/%Y')"
+    fi
+}
+
