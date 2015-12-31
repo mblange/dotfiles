@@ -23,6 +23,18 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+# Correct dir spellings
+shopt -q -s cdspell
+
+# Turn on the extended pattern matching features 
+shopt -q -s extglob
+
+shopt -q -s direxpand
+
+shopt -q -s dirspell
+
+shopt -q -s dotglob
+
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar
@@ -84,25 +96,15 @@ if [ -x /usr/bin/dircolors ]; then
     #alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
-#alias ll='ls -lAF'
-#alias la='ls -A'
-#alias l='ls -CF'
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 ##mbl## testing...##
-for DOTFILE in "$HOME"/.dotfiles/.{functions,path,env,aliases,grep,prompt,}; do
+for DOTFILE in "$HOME"/.dotfiles/.{functions,aliases}; do
     [ -f "$DOTFILE" ] && . "$DOTFILE"
 done
-
-##mbl## uncomment if above fails...##
-#if [ -f ~/.bash_aliases ]; then
-#    . ~/.bash_aliases
-#fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
