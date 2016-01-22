@@ -19,4 +19,4 @@ alias pws="python -m SimpleHTTPServer"
 
 # SUDO!!
 
-alias fuck="sudo !!"
+alias fuck='sudo $(fc -ln -1)'
