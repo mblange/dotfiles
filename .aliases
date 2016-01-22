@@ -1,11 +1,10 @@
 # make ls more useful
-alias ll='ls -lAF --color=auto'
-
+alias ll='ls -hlF --color=auto'
+alias la='ls -hAlF --color=auto'
 # tmux
 alias tmux="/usr/local/bin/tmux"
 
 # cd-foo
-
 alias ..="cd ..; ll"
 alias ...="cd ../..; ll"
 alias ....="cd ../../..; ll"
