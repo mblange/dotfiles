@@ -1,0 +1,6 @@
+setg Prompt "msf %T"
+load alias
+alias so show options
+alias si show info
+alias sa show advanced
+spool /root/.msf5/logs/console.log
