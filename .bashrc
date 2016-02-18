@@ -117,4 +117,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
-PATH=$PATH:/opt
+PATH=$PATH:/opt/bin
