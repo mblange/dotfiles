@@ -20,3 +20,4 @@ set incsearch
 syntax enable
 
 set number
+colo desert
