@@ -19,11 +19,11 @@ function linkDotFile {
 }
 
 # list of files:
-dotfiles=(.bashrc .bash_profile .aliases .vimrc .inputrc .tmux.conf)
+declare -a dotfiles=(.bashrc .bash_profile .aliases .vimrc .inputrc .tmux.conf)
 
 #run function
-for i in dotfiles; do
-	linkDotFile i;
+for i in "${dotfiles[@]}"; do
+	linkDotFile $i;
 done
 
 # reload bashrc
