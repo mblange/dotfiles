@@ -26,6 +26,9 @@ for i in "${dotfiles[@]}"; do
 	linkDotFile $i;
 done
 
+# create .gitconfig
+echo "git config credential.helper 'store'" >> ~/.gitconfig
+
 # update .gitconfig
 read -p "Enter your full name, followed by [ENTER]:" name
 
