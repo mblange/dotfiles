@@ -1,5 +1,5 @@
-[user]
-	name = Matthew Lange
-	email = matthew.lange4@gmail.com
 [credential]
 	helper = store --file ~/.my-credentials
+[user]
+	email = matthew.lange4@gmail.com
+	name = Matthew Lange
