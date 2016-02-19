@@ -26,8 +26,10 @@ for i in "${dotfiles[@]}"; do
 	linkDotFile $i;
 done
 
-## git stuff ##
+# reload bashrc
+. ~/.bashrc 
 
+## git stuff ##
 # update .gitconfig
 read -p "Enter your full name, followed by [ENTER]:" name
 
@@ -39,6 +41,3 @@ git config --global user.name "$name"
 # set credential store option
 cd ~/.dotfiles/
 git config credential.helper 'store'
-
-# reload bashrc
-. ~/.bashrc 
