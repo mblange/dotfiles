@@ -18,6 +18,6 @@ set incsearch
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
 syntax enable
-
+set cursorline
 set number
 colo desert
