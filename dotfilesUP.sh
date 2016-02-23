@@ -28,3 +28,16 @@ done
 
 # reload bashrc
 . ~/.bashrc 
+
+## git stuff ##
+# update .gitconfig
+read -p "Enter your full name, followed by [ENTER]:" name
+
+read -p "enter your github email address, followed by [ENTER]:" email
+
+git config --global user.email "$email"
+git config --global user.name "$name"
+
+# set credential store option
+cd ~/.dotfiles/
+git config credential.helper 'store'
