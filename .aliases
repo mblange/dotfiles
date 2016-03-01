@@ -1,6 +1,6 @@
 # make ls more useful
-alias ll='ls -hlF --color=auto'
-alias la='ls -hAlF --color=auto'
+alias ll='ls -hlF'
+alias la='ls -hAlF'
 
 # tmux
 alias tmux="/usr/local/bin/tmux"
@@ -18,5 +18,4 @@ alias wip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias pws="python -m SimpleHTTPServer" 
 
 # SUDO!!
-
 alias fuck='sudo $(fc -ln -1)'
