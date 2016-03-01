@@ -15,7 +15,10 @@ alias .....="cd ../../../..; ll"
 alias wip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # python SimpleHTTPServer
-alias pws="python -m SimpleHTTPServer" 
+alias pws="ifconfig|grep 'inet addr'|cut -d':' -f2|cut -d' ' -f1; python -m SimpleHTTPServer" 
+
+# updated version of sslyze
+alias sslyze="/opt/sslyze-0.13.3/sslyze_cli.py"
 
 # SUDO!!
 alias fuck='sudo $(fc -ln -1)'
