@@ -15,9 +15,13 @@ alias .....="cd ../../../..; ll"
 alias wip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # python SimpleHTTPServer
-alias pws="ifconfig|grep 'inet addr'|cut -d':' -f2|cut -d' ' -f1; python -m SimpleHTTPServer" 
+alias pws="ifconfig|grep 'netmask'; python -m SimpleHTTPServer" 
 
 # SUDO!!
 alias fuck='sudo $(fc -ln -1)'
 
 alias ipwhois="python -c \"from ipwhois import IPWhois; import sys; print IPWhois(sys.argv[1]).lookup_whois()['nets'][0]['description']\""
+
+alias gistory="history | grep"
+
+alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
