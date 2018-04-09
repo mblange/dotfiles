@@ -117,4 +117,19 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# put git branch in command prompts
 PATH=$PATH:/opt/bin
+PYTHONPATH=$PATH:/opt/birp/x3270-3.3
+function git-current-branch {
+    branch=$(git branch 2> /dev/null | grep "^* " | sed -e 's/^\* //')
+    if [ -n "${branch}" ]; then
+        echo " ($branch) "
+    fi
+}
+
+PS1='\[\033[01;34m\][\D{%H:%M:%S %d.%m.%y}]\[\033[01;31m\][\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]]\[\033[00m\]$(git-current-branch)# '
+if [ -f /etc/debian_version ] && [ $(grep -ic kali /etc/debian_version) -eq 1 ]; then
+    PS1='\[\033[01;34m\][\D{%H:%M:%S-%y%m%d}]\[\033[01;31m\][\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]]\[\033[00m\]$(git-current-branch)# '
+else
+    PS1='\[\033[00;33m\][\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[0;33m\]]\[\033[00m\]$(git-current-branch)# '
+fi

@@ -40,4 +40,3 @@ function dueDate() {
         python -c "import datetime; print (datetime.timedelta(days=$delta) + datetime.datetime.strptime('$date', '%m/%d/%Y')).strftime('%m/%d/%Y')"
     fi
 }
-
