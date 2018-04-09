@@ -2,9 +2,6 @@
 alias ll='ls -hlF'
 alias la='ls -hAlF'
 
-# tmux
-alias tmux="/usr/local/bin/tmux"
-
 # cd-foo
 alias ..="cd ..; ll"
 alias ...="cd ../..; ll"
