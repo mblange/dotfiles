@@ -5,6 +5,9 @@
 # go to home directory
 cd
 
+# id home dir
+HDIR=$(pwd)
+
 # clone the git repo
 #git clone https://github.com/mblange/dotfiles.git
 
@@ -12,9 +15,9 @@ cd
 function linkDotFile {
 	if [ -f ~/$1 ]; then
 		mv $1 $1.orig;
-		ln -sv /home/matt/.dotfiles/$1 ~/$1;
+		ln -sv $HDIR/.dotfiles/$1 ~/$1;
 	else
-		ln -sv /home/matt/.dotfiles/$1 ~/$1;
+		ln -sv $HDIR/.dotfiles/$1 ~/$1;
 	fi
 }
 
