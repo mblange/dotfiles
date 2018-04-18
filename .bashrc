@@ -118,7 +118,7 @@ if ! shopt -oq posix; then
 fi
 
 # put git branch in command prompts
-PATH=$PATH:/opt/bin
+PATH=~/.local/bin:/opt/bin:$PATH
 PYTHONPATH=$PATH:/opt/birp/x3270-3.3
 function git-current-branch {
     branch=$(git branch 2> /dev/null | grep "^* " | sed -e 's/^\* //')
