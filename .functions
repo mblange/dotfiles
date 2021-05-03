@@ -46,3 +46,7 @@ transfer() {
   cat $tmpfile; 
   rm -f $tmpfile; 
 }
+
+arf_check () {
+while read d; do host $d; done < $1 |grep -v acm-validations
+}

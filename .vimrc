@@ -13,6 +13,7 @@ set cursorline
 set number
 set autoread
 set laststatus=2
+set buftype=
 
 " nerdcommenter
 filetype plugin on

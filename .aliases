@@ -12,7 +12,8 @@ alias .....="cd ../../../..; ll"
 alias wip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # python SimpleHTTPServer
-alias pws="ifconfig|grep 'netmask'; python -m SimpleHTTPServer" 
+#alias pws="ifconfig|grep 'netmask'; python -m SimpleHTTPServer" 
+alias pws="ifconfig|grep 'netmask'; python -m http.server" 
 
 # SUDO!!
 alias fuck='sudo $(fc -ln -1)'

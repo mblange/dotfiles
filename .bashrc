@@ -127,9 +127,22 @@ function git-current-branch {
     fi
 }
 
+# nmap script search
+function nsearch() { locate *.nse | grep -o "$1".*; }
+
 PS1='\[\033[01;34m\][\D{%H:%M:%S %d.%m.%y}]\[\033[01;31m\][\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]]\[\033[00m\]$(git-current-branch)# '
 if [ -f /etc/debian_version ] && [ $(grep -ic kali /etc/debian_version) -eq 1 ]; then
     PS1='\[\033[01;34m\][\D{%H:%M:%S-%y%m%d}]\[\033[01;31m\][\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]]\[\033[00m\]$(git-current-branch)# '
 else
     PS1='\[\033[00;33m\][\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[0;33m\]]\[\033[00m\]$(git-current-branch)# '
 fi
+
+# Nodejs
+VERSION=v12.22.1
+DISTRO=linux-x64
+export PATH=$PATH:/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin
+export OPENSSL_CONF=/etc/ssl/
+# NM Certs
+export NODE_EXTRA_CA_CERTS=~/certs/NMProdCACertBundle.pem
+
+complete -C /opt/bin/terraform terraform
