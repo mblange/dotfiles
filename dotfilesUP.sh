@@ -22,7 +22,7 @@ function linkDotFile {
 }
 
 # list of files:
-declare -a dotfiles=(.bashrc .bash_profile .aliases .vimrc .inputrc .tmux.conf)
+declare -a dotfiles=(.zshrc .zprofile .aliases .vimrc .tmux.conf)
 
 #run function
 for i in "${dotfiles[@]}"; do
@@ -30,13 +30,13 @@ for i in "${dotfiles[@]}"; do
 done
 
 # reload bashrc
-. ~/.bashrc 
+. ~/.zshrc 
 
 ## git stuff ##
 # update .gitconfig
-read -p "Enter your full name, followed by [ENTER]:" name
+read "name?Enter your full name, followed by [ENTER]: "
 
-read -p "enter your github email address, followed by [ENTER]:" email
+read "email?enter your github email address, followed by [ENTER]: "
 
 git config --global user.email "$email"
 git config --global user.name "$name"
