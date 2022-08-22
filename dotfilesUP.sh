@@ -34,9 +34,9 @@ done
 
 ## git stuff ##
 # update .gitconfig
-read "name?Enter your full name, followed by [ENTER]: "
+read "name?Enter your full name, followed by [ENTER] "
 
-read "email?enter your github email address, followed by [ENTER]: "
+read "email?enter your github email address, followed by [ENTER] "
 
 git config --global user.email "$email"
 git config --global user.name "$name"
