@@ -9,7 +9,9 @@ cd
 HDIR=$(pwd)
 
 # clone the git repo
-#git clone https://github.com/mblange/dotfiles.git
+git clone https://github.com/mblange/dotfiles.git $HDIR/.dotfiles
+# clone fzf-tab repo
+git clone https://github.com/Aloxaf/fzf-tab $HDIR/.config/fzf-tab
 
 # copy .bashrc if it exits then link it
 function linkDotFile {
