@@ -34,6 +34,10 @@ done
 # reload bashrc
 . ~/.zshrc 
 
+## vim stuff ##
+# https://github.com/junegunn/vim-plug
+# Reload .vimrc and :PlugInstall to install plugins.
+
 ## git stuff ##
 # update .gitconfig
 read "name?Enter your full name, followed by [ENTER] "
