@@ -195,7 +195,7 @@ alias grepstat="netstat -pltun | grep -i -e proto -e"
 #############################################################################
 
 # parrot os prompt
-source "$HOME/.config/zsh-theme/swag.zsh-theme"
+# source "$HOME/.config/zsh-theme/swag.zsh-theme"
 
 # nvm specific config
 # first run `brew install nvm`

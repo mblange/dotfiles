@@ -280,7 +280,7 @@ set background=dark
 let g:gruvbox_material_background = 'hard'
 
 " disable italic comments
-" let g:gruvbox_material_disable_italic_comment = 1
+let g:gruvbox_material_disable_italic_comment = 1
 
 " Control the |hl-Visual| and the |hl-VisualNOS| highlight group - default grey
 let g:gruvbox_material_visual = 'red background'
@@ -588,7 +588,7 @@ set undolevels=9999
 " set t_kB=[Z
 
 " enable mouse support in term for [a]ll modes
-set mouse=a
+"set mouse=a
 " adding condition as ttymouse causes errors in nvim
 if !has("nvim")
     " make mouse mode work while using vim inside of tmux
@@ -630,7 +630,7 @@ set formatoptions+=j
 " display text width column
 set textwidth=79
 " add visual cue as column
-set colorcolumn=80
+set colorcolumn=0
 " disable wrapping
 set nowrap
 

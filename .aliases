@@ -25,3 +25,7 @@ alias gistory="history | grep"
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
 
 alias grepstat="netstat -pltun | grep -i -e proto -e"
+
+# Don't lose vim colorscheme in tmux mode
+# https://stackoverflow.com/questions/10158508/lose-vim-colorscheme-in-tmux-mode
+alias tmux='tmux -2'
