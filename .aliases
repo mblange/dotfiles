@@ -10,10 +10,10 @@ alias .....="cd ../../../..; ll"
 
 # what's my IP?
 alias wip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ifme='curl ifconfig.me'
 
 # python SimpleHTTPServer
-#alias pws="ifconfig|grep 'netmask'; python -m SimpleHTTPServer" 
-alias pws="ifconfig|grep 'netmask'; python -m http.server" 
+alias pws="ifconfig|grep 'netmask'; python3 -m http.server" 
 
 # SUDO!!
 alias fuck='sudo $(fc -ln -1)'
@@ -29,3 +29,6 @@ alias grepstat="netstat -pltun | grep -i -e proto -e"
 # Don't lose vim colorscheme in tmux mode
 # https://stackoverflow.com/questions/10158508/lose-vim-colorscheme-in-tmux-mode
 alias tmux='tmux -2'
+
+# Routes
+alias routes='ip -c route|column -t -N DESTINATION,\ ,GATEWAY,TYPE,DEV,\ ,SRC,\ ,iFACE,\ ,metric'
